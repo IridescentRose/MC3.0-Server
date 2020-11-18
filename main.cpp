@@ -11,7 +11,9 @@
 
 auto main() -> int {
 	g_Logger->setCutoff(LogLevel::Trace);
-	g_Logger->info("Welcome!");
+	g_Logger->info("Welcome to the Minecraft PSP 3.0+ Server!");
+
+
 
 	return 0;
 }

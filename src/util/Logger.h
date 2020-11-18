@@ -1,5 +1,5 @@
 #pragma once
 #include "ThreadSafe.h"
-import Log;
 
+import Log;
 extern ThreadSafe<Logger> g_Logger;

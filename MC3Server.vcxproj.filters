@@ -24,6 +24,15 @@
     <ClCompile Include="src\util\Logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\net\ByteBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\net\NetworkDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\net\Socket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\util\NonCopy.h">
@@ -36,6 +45,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\util\Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\net\ByteBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\net\NetworkDriver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\net\NetworkTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\net\Socket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
