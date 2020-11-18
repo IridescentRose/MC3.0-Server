@@ -21,6 +21,9 @@
     <ClCompile Include="src\util\logger.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\util\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\util\NonCopy.h">
@@ -30,6 +33,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\util\ThreadSafe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\Logger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

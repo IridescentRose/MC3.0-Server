@@ -1,17 +1,17 @@
-#include <iostream>
-#include "src/util/ThreadSafe.h"
+/*****************************************************************//**
+ * \file   main.cpp
+ * \brief  The Main File
+ * 
+ * \author Iridescence - Nathan Bourgeois <iridescentrosesfall@gmail.com>
+ * \date   November 2020
+ *********************************************************************/
 
-import Log;
+#include <iostream>
+#include <util/Logger.h>
 
 auto main() -> int {
-
-	ThreadSafe<Logger> myLog("test.log", "Main");
-
-	myLog->setCutoff(LogLevel::Trace);
-	myLog->log("Test", LogLevel::Info);
-	myLog->log("Test", LogLevel::Warn);
-	myLog->log("Test", LogLevel::Error);
-	myLog->log("Test", LogLevel::Debug);
+	g_Logger->setCutoff(LogLevel::Trace);
+	g_Logger->info("Welcome!");
 
 	return 0;
 }

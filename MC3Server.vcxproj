@@ -63,9 +63,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\util\Logger.cpp" />
     <ClCompile Include="src\util\logger.ixx" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\util\Logger.h" />
     <ClInclude Include="src\util\NonCopy.h" />
     <ClInclude Include="src\util\NonMove.h" />
     <ClInclude Include="src\util\ThreadSafe.h" />
