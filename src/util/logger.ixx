@@ -6,6 +6,7 @@
  * \author Iridescence - Nathan Bourgeois <iridescentrosesfall@gmail.com>
  * \date   November 2020
  *********************************************************************/
+#pragma once
 #include <fmt/core.h>
 #include <stdexcept>
 #include "NonCopy.h"
@@ -66,6 +67,13 @@ export class Logger : public NonCopyable, NonMovable {
 	std::string internal_name;
 
 public:
+
+	/**
+	 * Logger instantiation.
+	 * 
+	 * \param path - File for the log to output to
+	 * \param name - Name. If omitted - there is no name.
+	 */
 	Logger(const std::string& path, const std::string& name = ""): cutoff_level(LogLevel::Info), internal_name(name), hasName(name != "") {
 		int stat = fopen_s(&internal_file, path.c_str(), "w");
 
@@ -74,11 +82,21 @@ public:
 		}
 	}
 
+	/**
+	 * Closes the file.
+	 * 
+	 */
 	~Logger() {
 		fclose(internal_file);
 	}
 
-	auto log(const std::string& msg, const LogLevel& lvl) const {
+	/**
+	 * Logs a message or discards if below the cutoff level.
+	 * 
+	 * \param msg - The message you wish to output
+	 * \param lvl - The message level 
+	 */
+	inline auto log(const std::string& msg, const LogLevel& lvl) const {
 		if (lvl >= cutoff_level) {
 			auto formatStr = (hasName ? "[" + internal_name + "]" : "") + "[" + logLevelToString(lvl) + "]: ";
 
@@ -87,7 +105,34 @@ public:
 		}
 	}
 
-	auto setCutoff(const LogLevel& lvl) {
+	/**
+	 * Sets the new cutoff level.
+	 * 
+	 * \param lvl - The new cutoff level
+	 */
+	inline auto setCutoff(const LogLevel& lvl) {
 		cutoff_level = lvl;
+	}
+
+	// Simple functions to do a specific level
+
+	inline auto trace(const std::string& msg) const {
+		log(msg, LogLevel::Trace);
+	}
+
+	inline auto debug(const std::string& msg) const {
+		log(msg, LogLevel::Debug);
+	}
+
+	inline auto info(const std::string& msg) const {
+		log(msg, LogLevel::Info);
+	}
+
+	inline auto warn(const std::string& msg) const {
+		log(msg, LogLevel::Warn);
+	}
+
+	inline auto error(const std::string& msg) const {
+		log(msg, LogLevel::Error);
 	}
 };
