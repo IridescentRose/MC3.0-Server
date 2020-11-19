@@ -42,17 +42,18 @@ namespace Stardust::Network {
 		sockaddr.sin_port = htons(m_PortNo);
 
 		g_Logger->debug("Listening on socket...");
-		if (listen(m_socket, 1) < 0) {
+
+		int stat = listen(m_socket, 1);
+		if (stat < 0) {
 			throw std::runtime_error("Fatal: Could not listen on socket. Errno: " + std::to_string(errno));
 		}
 
 		auto addrlen = sizeof(sockaddr);
+		int sock = static_cast<int>(accept(m_socket, (struct sockaddr*)&sockaddr, (socklen_t*)&addrlen));
 		g_Logger->debug("Found potential connection...");
-
-		Connection* conn = new Connection(static_cast<int>(accept(m_socket, (struct sockaddr*)&sockaddr, (socklen_t*)&addrlen)));
 		g_Logger->info("New Connection from " + std::string((inet_ntoa(sockaddr.sin_addr))) + " on port " + std::to_string(ntohs(sockaddr.sin_port)));
 
-		return conn;
+		return new Connection(sock);
 	}
 
 	Connection::Connection(int conn) {
@@ -73,6 +74,13 @@ namespace Stardust::Network {
 	{
 		g_Logger->info("Closing connection!");
 		closesocket(m_socket);
+	}
+
+	Connection::~Connection()
+	{
+		if (connected) {
+			Close();
+		}
 	}
 
 	bool Connection::SetBlock(bool blocking)

@@ -63,17 +63,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Client.cpp" />
     <ClCompile Include="src\net\ByteBuffer.cpp" />
     <ClCompile Include="src\net\NetworkDriver.cpp" />
     <ClCompile Include="src\net\Socket.cpp" />
+    <ClCompile Include="src\Server.cpp" />
     <ClCompile Include="src\util\Logger.cpp" />
-    <ClCompile Include="src\util\logger.ixx" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Client.h" />
     <ClInclude Include="src\net\ByteBuffer.h" />
     <ClInclude Include="src\net\NetworkDriver.h" />
     <ClInclude Include="src\net\NetworkTypes.h" />
     <ClInclude Include="src\net\Socket.h" />
+    <ClInclude Include="src\Server.h" />
+    <ClInclude Include="src\Types.h" />
     <ClInclude Include="src\util\Logger.h" />
     <ClInclude Include="src\util\NonCopy.h" />
     <ClInclude Include="src\util\NonMove.h" />

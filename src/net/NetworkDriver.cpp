@@ -18,4 +18,7 @@ namespace Stardust::Network {
 
 	void NetworkDriver::Cleanup() {
 	}
+
+
+	NetworkDriver g_NetworkDriver;
 }

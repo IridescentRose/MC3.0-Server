@@ -1,6 +1,10 @@
 #pragma once
 #include <mutex>
 
+/**
+ * This is a generic Thread Safety wrapper.
+ * It uses mutexes around every method.
+ */
 template <typename T>
 class ThreadSafe {
 	T data;
