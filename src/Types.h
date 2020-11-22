@@ -22,3 +22,11 @@ typedef signed char s8;
 typedef signed short s16;
 typedef signed long int s32;
 typedef signed long long int s64;
+
+struct UUID {
+	u64 id[2];
+
+	bool operator==(const UUID& other) const {
+		return (id[0] == other.id[0]) && (id[1] == other.id[1]);
+	}
+};
