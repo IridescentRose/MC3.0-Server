@@ -16,7 +16,7 @@ enum class cbPacketName {
 };
 
 /**
- * Server-Bound Disconnect.
+ * Client-Bound Disconnect.
  *
  * No fields - causes immediate disconnection.
  */
@@ -25,7 +25,7 @@ struct CbDisconnect {
 };
 
 /**
- * Client-bound handshake.
+ * Client-Bound handshake.
  * 
  * This sends the current protocol ID,
  * The server version major,
