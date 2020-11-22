@@ -6,6 +6,7 @@
 #include "util/NonCopy.h"
 #include "util/NonMove.h"
 #include <vector>
+#include "world/World.h"
 
 using namespace Stardust;
 
@@ -13,6 +14,8 @@ class Server : public NonCopyable, NonMovable {
 	Network::ServerSocket* socket;
 	std::vector<Client*> clients;
 	bool running;
+
+	World world;
 
 	void collectDead();
 public:

@@ -6,8 +6,6 @@ Server::Server(u16 port) {
 
 	running = true;
 	socket = new Network::ServerSocket(port);
-
-	//TODO: BUILD THE WORLD - SPAWN WORLD THREAD
 }
 
 Server::~Server() {
@@ -30,11 +28,8 @@ void Server::collectDead() {
 			temp.push_back(clients[i]);
 		}
 	}
-	clients.clear();
 
-	for (auto& cl : temp) {
-		clients.push_back(cl);
-	}
+	clients = temp;
 }
 
 void Server::listen() {
@@ -44,7 +39,7 @@ void Server::listen() {
 		auto cl = new Client(conn);
 		clients.push_back(cl);
 
-		//TODO: SPAWN CLIENT THREAD!
+		cl->start();
 	}
 
 	collectDead();

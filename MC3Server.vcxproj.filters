@@ -32,6 +32,9 @@
     </ClCompile>
     <ClCompile Include="src\Client.cpp" />
     <ClCompile Include="src\Server.cpp" />
+    <ClCompile Include="src\world\World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\util\NonCopy.h">
@@ -65,6 +68,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\WorldTime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

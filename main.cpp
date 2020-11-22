@@ -20,6 +20,5 @@ auto main() -> int {
 		srv.listen();
 	}
 
-
 	return 0;
 }
