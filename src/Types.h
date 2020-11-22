@@ -1,3 +1,10 @@
+/*****************************************************************//**
+ * \file   Types.h
+ * \brief  Shorthand type names for better syntax
+ * 
+ * \author Iridescence - Nathan Bourgeois <iridescentrosesfall@gmail.com>
+ * \date   November 2020
+ *********************************************************************/
 #pragma once
 #include <stdint.h>
 

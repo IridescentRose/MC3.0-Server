@@ -50,7 +50,7 @@ namespace Stardust::Network {
 		 * Packet Receive.
 		 * 
 		 * \param extended - If we use the u16 ID or u8 ID.
-		 * \return - 
+		 * \return - Packet
 		 */
 		PacketIn* Recv(bool extended);
 

@@ -16,6 +16,6 @@ auto World::tickUpdate(World* self) -> void {
 	while (self->running) {
 		self->worldTime->tick();
 
-		std::this_thread::sleep_for(std::chrono::duration<int, std::milli>(50));
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
 	}
 }
