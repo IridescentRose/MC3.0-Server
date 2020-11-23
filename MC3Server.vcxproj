@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Release|x64">
@@ -77,6 +77,9 @@
     <ClInclude Include="src\net\NetworkDriver.h" />
     <ClInclude Include="src\net\NetworkTypes.h" />
     <ClInclude Include="src\net\Socket.h" />
+    <ClInclude Include="src\protocol\ClientBoundProtocol.h" />
+    <ClInclude Include="src\protocol\Protocol.h" />
+    <ClInclude Include="src\protocol\ServerBoundProtocol.h" />
     <ClInclude Include="src\Server.h" />
     <ClInclude Include="src\Types.h" />
     <ClInclude Include="src\util\Logger.h" />
